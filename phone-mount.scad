@@ -14,7 +14,7 @@ difference() {
         translate([-1,3-laptopThickness,-7])
         cube([80,laptopThickness,18]);
     translate([-1,-laptopThickness,-7])
-        cube([21,20,28]);
+        cube([21,60,28]);
      
 }
 
@@ -138,12 +138,12 @@ rotate([180,+0,-20])
                 cube([5,-11+phoneThickness,6]);
                 
                 
-////pixel6a
+//pixel6a
 //color("Black")
 //rotate([0,180,+70])
 //translate([-38.6,-149.5-phoneWidth+clipWidth,-20])
 //cube([phoneThickness,phoneWidth,phoneLength]);
-//
+
 ////laptop top
 //color("Grey")
 //rotate([0,180,90])
@@ -152,5 +152,5 @@ rotate([180,+0,-20])
 ////laptop bottom
 //color("Grey")
 //rotate([0,77,90])
-//translate([+279,-77-phoneWidth+clipWidth,-358])
+//translate([+278,-77-phoneWidth+clipWidth,-358])
 //cube([laptopThickness*4,400,300]);
