@@ -2,155 +2,169 @@ phoneLength=155; // 155
 phoneWidth=75; // 75
 phoneThickness=12; // 12
 laptopThickness=5; // 5
-clipWidth=76; // 76
-materialThickness=3;
-clipHeight=19;
+clipWidth=70; // 70
+
+/* [Hidden] */
+materialThickness=3; // 3
+clipHeight=9; // 9
+
 
 difference() {
-    translate([0,4-laptopThickness,0])
+        translate([+77-clipWidth,0,0])
     cube([clipWidth,6+laptopThickness,clipHeight]);
-    translate([-1,7-laptopThickness,-1])
-        cube([80,laptopThickness,17]);
-        translate([-1,3-laptopThickness,-7])
-        cube([80,laptopThickness,18]);
-    translate([-1,-laptopThickness,-7])
-        cube([21,60,28]);
-     
-}
-
-//rotate([0,60,0])
-//    translate([0,7.5,0])
-//        cube([155,2.5,10]);
+    translate([-1,+3,-1])
+        cube([1000,+laptopThickness,-3+clipHeight]);
+    translate([0,-1,-7])
+        cube([0,24+laptopThickness,28]);
+  }
+//bottom retaining clip
+        translate([-8+76,+1,-3+clipHeight-phoneLength])
+    cube([6.5,-1+materialThickness,9+materialThickness]);
 
 //Laptop cross-bar
 rotate([90,0,0])
-translate([0,0,-10])
+translate([0,0,-6-laptopThickness])
 linear_extrude(height=materialThickness, center=false, convexity=1, scale=[0], $fn=1)
 polygon( points=[
-            [20,0],
-            [34,0],
-            [clipWidth,15-phoneLength+13],
-            [clipWidth,19-materialThickness-phoneLength],
-            [-9+clipWidth,19-materialThickness-phoneLength]] );
+            [77-clipWidth,0],
+            [90-clipWidth,0],
+            [76,5-phoneLength+13],
+            [76,clipHeight-materialThickness-phoneLength],
+            [-9+76,clipHeight-materialThickness-phoneLength]] );
 
 //Phone cross-bar
 rotate([90,0,0])
 rotate([0,-20,0])
-translate([-9.3,0,-40.26])
+translate([-9.3,0,-30-phoneThickness])
 linear_extrude(height=materialThickness, center=true, convexity=1, scale=[0], $fn=1)
 polygon( points=[
-            [76,-2],
-            [76,19],
-            [12+clipWidth+phoneWidth,22-phoneLength+13],
-            [12+clipWidth+phoneWidth,19-phoneLength-materialThickness],
-            [+9+clipWidth+phoneWidth,19-phoneLength-materialThickness]] );
+            [82,-15],
+            [81,0+clipHeight],
+            [9.3+76+phoneWidth,14-phoneLength+13],
+            [9.3+76+phoneWidth,9-phoneLength-materialThickness],
+            [+9+76+phoneWidth,+9-phoneLength-materialThickness]] );
 
 //Down-bar
 rotate([90,0,0])
 rotate([0,-20,0])
-translate([-9.3,+0.0,-40.26])
+translate([-9.3,+0.0,-30-phoneThickness])
 linear_extrude(height=materialThickness, center=true, convexity=0, scale=[0], $fn=1)
-polygon( points=[   [87,-10],
-                    [76,19],
-                    [clipWidth,19-phoneLength],
-                    [clipWidth+10,19-phoneLength]] );
-
+polygon( points=[   [89,-13],
+                    [+0+76,clipHeight],
+                    [0+76,19-phoneLength],
+                    [3+76+10,19-phoneLength]] );
+                    
 //Phone bottom-bar
 rotate([0,0,-20])
-translate([66.76,+38.7,13-phoneLength+materialThickness])
-cube([10+phoneWidth,3,14]);
+translate([-9+76,+28.5+phoneThickness,3-phoneLength+materialThickness])
+cube([9+phoneWidth,3,14]);
 
 //Clipbox
 difference() {
     rotate([90,0,0])
     rotate([0,-20,0])
-    translate([-10.3,0,-39])
-    linear_extrude(height=4+phoneThickness, center=false, convexity=0, scale=[0], $fn=1)
-    polygon( points=[   [13+phoneWidth+clipWidth,19-materialThickness-phoneLength],
-                        [13+clipWidth+phoneWidth,35-phoneLength],
-                [+10+clipWidth+phoneWidth,35-phoneLength],
-                [-14+clipWidth+phoneWidth,19-materialThickness-phoneLength]] );
+    translate([-13,+0,-31.5-phoneThickness])
+    linear_extrude(height=+7+phoneThickness, center=false, convexity=0, scale=[0], $fn=1)
+    polygon( points=[   [13+phoneWidth+76,0+clipHeight-materialThickness-phoneLength],
+                        [13+76+phoneWidth,27-phoneLength],
+                [+11+76+phoneWidth,27-phoneLength],
+                [-11+76+phoneWidth,+2+clipHeight-materialThickness-phoneLength],
+                    [-11+76+phoneWidth,+0+clipHeight-materialThickness-phoneLength]
+
+    ] );
                 
     rotate([0,0,-20])
-    translate([61.0,38-phoneThickness,22-phoneLength-materialThickness])
-    cube([13+phoneWidth,+3+phoneThickness,22]);
+    translate([62.0,+27,3+clipHeight-phoneLength-materialThickness])
+    cube([+11+phoneWidth,+2+phoneThickness,+27]);
     rotate([0,0,-20])
-        translate([26,+8,26-phoneLength])
+        translate([26,8,26-phoneLength])
     cube([-3+phoneWidth,6+phoneThickness,11]);
+    // visible cutout
             rotate([0,0,-20])
-        translate([-5+clipWidth,+29-phoneThickness,23-phoneLength])
-    cube([-2+phoneWidth,phoneThickness,11]);
+        translate([-4+76,+24,+12-phoneLength])
+    cube([-2+phoneWidth,+5,25]);
 }
-
-
 
 //bottom left phone rest
 rotate([0,0,-17])
-
-        translate([-2,+10.1,20.5-phoneLength-materialThickness])
+        translate([-2,+10.1,10.5-phoneLength-materialThickness])
     linear_extrude(height=3, center=true, convexity=0, scale=[0], $fn=1)
-    polygon( points=[   [clipWidth,12],
-                        [13.0+clipWidth,12],
-                [26+clipWidth,25],
-                [-4+clipWidth,25],]);
-
-//filler block-bottom
-translate([-0.1,+0.48,-139])
-    linear_extrude(height=-7+clipHeight, convexity=0, scale=[0], $fn=1)
-
-    polygon( points=[   [-8.9+clipWidth,9],
-                        [+1.05+clipWidth,15.9],
-                [+0+clipWidth,9.0],] );
-
-//filler block-top
-translate([-0.1,+0.48,9.49])
-    linear_extrude(height=clipHeight, center=true, convexity=0, scale=[0], $fn=1)
-
-    polygon( points=[   [-13+clipWidth,9],
-                        [+1.05+clipWidth,15.9],
-                [+0+clipWidth,9.0],] );
+    polygon( points=[   [-2+76,13.1],
+                        [13.0+76,12.3],
+                [26+76,15+phoneThickness],
+                [-4+76,17+phoneThickness],]);
                 
-//support block-top
-translate([-0.1,+0.48,+0.0])
-    linear_extrude(height=-6+clipHeight, convexity=0, scale=[0], $fn=1)
+//left phone face/chamfer
+//top phoneThickness bracket
+rotate([0,0,-20])
+    linear_extrude(height=9.0, convexity=0, scale=[0], $fn=1)
+    polygon( points=[   [-9.3+76,31.5+phoneThickness],
+                        [-4.1+76,31.5+phoneThickness],
+                [-4.1+76,+26.0],
+                [-10.1+76,+36],
+                ] );
+//top laptopThickness bracket
+    linear_extrude(height=9.0, convexity=0, scale=[0], $fn=1)
 
-    polygon( points=[   [+0+clipWidth,13],
-                        [+3.9+clipWidth,12.9],
-                [+0+clipWidth,9.0],] );
-                
-//bottom retaining clip
-        translate([76,+4.5-laptopThickness,+16.0-phoneLength])
-    cube([2,9+laptopThickness,9+materialThickness]);
-        translate([69.5,+4.5-laptopThickness,16-phoneLength])
-    cube([6.5,3,9+materialThickness]);
+    polygon( points=[   [+0+76,6+laptopThickness],
+                        [2+76,4.3+laptopThickness],
+                [+0+76,+1],
+//                [-3+76,+8],
+                ] );
+//bottom phoneThickness bracket
+translate([0,0,6-phoneLength])
+rotate([0,0,-20])
+    linear_extrude(height=12.0, convexity=0, scale=[0], $fn=1)
+
+    polygon( points=[   [-9.3+76,31.5+phoneThickness],
+                        [-5+76,31.5+phoneThickness],
+                [-4.9+76,+27.0],
+                [-10.1+76,+36],
+                ] );
+
+//bottom laptopThickness bracket
+translate([0,0,+6-phoneLength])
+    linear_extrude(height=12.0, convexity=0, scale=[0], $fn=1)
+    polygon( points=[   [-2+76,6+laptopThickness],
+                        [0.1+76,+6.0+laptopThickness],
+                [+0+76,+1],
+                [-2+76,+1],
+                ] );
 
 //top phone retainer
 rotate([90,0,0])
 rotate([0,-20,0])
-        translate([+3.3,-6,-37.1+phoneThickness])
+        translate([+2.2,-6,-27])
     linear_extrude(height=2, center=true, convexity=0, scale=[0], $fn=1)
-    polygon( points=[   [-8+clipWidth,19],
-                        [-4+clipWidth,19],
-                        [-1+clipWidth,25],
-                [-8+clipWidth,25],] );
-rotate([180,+0,-20])
-        translate([-9.2+clipWidth,-25.1,-19.0])   
-                cube([5,-11+phoneThickness,6]);
+    polygon( points=[   [-10+76,-3+clipHeight],
+                        [-4+76,-3+clipHeight],
+                        [+4+76,6+clipHeight],
+                [-10+76,6+clipHeight],] );
                 
                 
-//pixel6a
-//color("Black")
-//rotate([0,180,+70])
-//translate([-38.6,-149.5-phoneWidth+clipWidth,-20])
+////pixel6a
+//color([0.3,0.3,0.3])
+//rotate([0,0,+70])
+//translate([28,4-phoneWidth-76,+9-phoneLength])
 //cube([phoneThickness,phoneWidth,phoneLength]);
-
+////screen
+//color([0.1,+0.1,0.1],0.8)
+//rotate([0,0,+70])
+//translate([27.8,7-phoneWidth-76,+12-phoneLength])
+//cube([phoneThickness,-6+phoneWidth,-6+phoneLength]);
+//
 ////laptop top
 //color("Grey")
-//rotate([0,180,90])
-//translate([-7.0,-77-phoneWidth+clipWidth,-16])
+//rotate([0,0,90])
+//translate([+3.0,-75-phoneWidth+76,-295])
 //cube([laptopThickness,400,300]);
+////screen
+//color([0.1,+0.1,0.1],1.8)
+//rotate([0,0,90])
+//translate([+2.9,-66-phoneWidth+76,-276])
+//cube([laptopThickness,380,270]);
 ////laptop bottom
 //color("Grey")
 //rotate([0,77,90])
-//translate([+278,-77-phoneWidth+clipWidth,-358])
-//cube([laptopThickness*4,400,300]);
+//translate([+278,+1-phoneWidth,-373])
+//cube([20,399,317]);
