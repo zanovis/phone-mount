@@ -2,7 +2,7 @@
  
 This is an OpenSCAD model for a phone mount that rests on the top-right corner of a laptop. 
 
-The model is customizable and printable on [Thingiverse](https://www.thingiverse.com/thing:5816088) via their built-in customizer. 
+The model is customizable and printable on [Thingiverse](https://www.thingiverse.com/thing:5816088) via their built-in Customizer. 
 
-![image](https://user-images.githubusercontent.com/32601911/219903969-9310bd6d-adfb-4cea-a042-6d8f42d1cd61.png)
+![image](https://user-images.githubusercontent.com/32601911/221396276-5bde8e3a-74e6-4b84-9d1b-7c290e1eeee7.png)
 
