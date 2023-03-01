@@ -12,7 +12,7 @@ clipHeight=9; // 9
 difference() {
         translate([+77-clipWidth,0,0])
     cube([clipWidth,6+laptopThickness,clipHeight]);
-    translate([-1,+3,-1])
+    translate([-391,+3,-1])
         cube([1000,+laptopThickness,-3+clipHeight]);
     translate([0,-1,-7])
         cube([0,24+laptopThickness,28]);
