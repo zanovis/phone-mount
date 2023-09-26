@@ -1,8 +1,8 @@
 phoneLength=155; // 155
 phoneWidth=75; // 75
-phoneThickness=12; // 12
+phoneThickness=12.5; // 12
 laptopThickness=5; // 5
-clipWidth=70; // 70
+clipWidth=80; // 70
 
 /* [Hidden] */
 materialThickness=3; // 3
@@ -47,10 +47,10 @@ polygon( points=[
 //Down-bar
 rotate([90,0,0])
 rotate([0,-20,0])
-translate([-9.3,+0.0,-30-phoneThickness])
+translate([-9.3,-1.0,-30-phoneThickness])
 linear_extrude(height=materialThickness, center=true, convexity=0, scale=[0], $fn=1)
-polygon( points=[   [89,-13],
-                    [+0+76,clipHeight],
+polygon( points=[   [89,-4],
+                    [+0+76,clipHeight+1],
                     [0+76,19-phoneLength],
                     [3+76+10,19-phoneLength]] );
                     
